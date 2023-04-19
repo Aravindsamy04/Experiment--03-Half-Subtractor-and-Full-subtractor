@@ -26,29 +26,74 @@ A full subtractor is a combinational circuit that performs subtraction involving
 Diff = A ⊕ B ⊕ Bin B = A'Bin + A'B + BBin
 
 ## Procedure
+Use module projname(input,output) to start the Verilog programmming. 2.Assign inputs and outputs using the word input and output respectively. 3.Use defined keywords like wire,assign and required logic gates to represent the boolean expression. 4.Use each output to represnt onre for differnce and the other for borrow. 5.End the verilog program using keyword endmodule.
 
 
-
-Write the detailed procedure here 
 
 
 ## Program:
+```
 /*
 Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: ARAVIND SAMY .P
+RegisterNumber: 212222230011
+HALF SUBTRACTOR
 
+module HalfSubtractor(A,B,Diff,Borrow);
+input A,B;
+output Diff,Borrow;
+wire x;
+xor (Diff, A,B);
+not(x,A);
+and(Borrow,x,B);
+endmodule
+
+FULL SUBTRACTOR
+
+module FullSubtractor(A,B,C,Diff,Borrow);
+input A,B,C;
+output Diff,Borrow;
+wire p;
+assign Diff = ((A^B)^C);
+not(p,A);
+assign Borrow = ((p&B)|(p&C)|(B&C));
+endmodule
+*/
+```
 ## Output:
+## HALF SUBRACTOR :
+## LOGIC SYMBOL:
+
+![half logic](https://user-images.githubusercontent.com/113497037/233172603-928312d2-27ad-413a-826a-28d0457c83a4.png)
+
+## TRUTHTABLE:
+![half truth](https://user-images.githubusercontent.com/113497037/233172647-1753aaa7-7560-4112-a0bb-eaff77987701.png)
+
+
+## RTL:
+![half rtl](https://user-images.githubusercontent.com/113497037/233172676-8bb35375-09ea-42cb-bf16-50246773a055.png)
+
+## TIMING DIAGRAM
+![half timim](https://user-images.githubusercontent.com/113497037/233172709-c0db8186-10b5-4eb9-af1c-f0b9f555f7b4.png)
+
+## FULL SUBRACTOR:
+
+## LOGIC
+![full logic](https://user-images.githubusercontent.com/113497037/233172833-5b3e332e-e8aa-4326-8641-d03a4dbce6be.png)
+
 
 ## Truthtable
 
+![full truth](https://user-images.githubusercontent.com/113497037/233172861-bd82c8c1-d76c-4be5-8e5d-78770cfdbcd9.png)
 
 
 ##  RTL realization
+![full rtl](https://user-images.githubusercontent.com/113497037/233172893-b062457d-5fbb-4834-b087-b87a5ddb2f3a.png)
 
 
 ## Timing diagram 
+
+![full timim](https://user-images.githubusercontent.com/113497037/233172924-a7e0f938-810b-4582-80d9-e6aafe93adf1.png)
 
 ## Result:
 Thus the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
